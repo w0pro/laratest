@@ -7,12 +7,13 @@ use App\Http\Requests\AdvertisementRequest;
 use App\Http\Requests\AdvertisementShowRequest;
 use App\Http\Resources\AdvertisementCollection;
 use App\Http\Resources\AdvertisementResource;
-use App\Repositories\AdvertisementRepository;
+use App\Interfaces\RepositoryInterface;
 use Illuminate\Http\JsonResponse;
 
 class AdvertisementController extends Controller
 {
-    public function __construct(private readonly AdvertisementRepository $advertisementRepository)
+
+    public function __construct(private readonly RepositoryInterface $advertisementRepository)
     {}
 
     public function store(AdvertisementRequest $request): JsonResponse
