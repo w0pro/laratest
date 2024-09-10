@@ -20,3 +20,10 @@ composer:
 
 php:
 	sudo docker-compose exec backend bash
+
+frontend:
+	sudo cd frontend/app
+	sudo npm install
+	sudo npm run format
+	sudo npm run dev
+
