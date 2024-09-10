@@ -6,10 +6,10 @@ services:
     image: mysql:8.2.0
     container_name: mysql
     ports:
-      - "${DB_PORT:-3306}:3306"
+      - "3306:3306"
     environment:
       MYSQL_DATABASE: database
-      MYSQL_USER: root
+      MYSQL_USER: user
       MYSQL_PASSWORD: password
       MYSQL_ROOT_PASSWORD: password
     volumes:
@@ -23,7 +23,7 @@ services:
       context: .
       dockerfile: docker/Dockerfile
     volumes:
-      - ./backend:/var/www/html/backend
+      - ./backend:/var/www/html/app/backend
     depends_on:
       - mysql
     networks:
@@ -35,7 +35,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./:/var/www/html/backend
+      - ./:/var/www/html/app/backend
       - ./docker/nginx/log:/var/log/nginx
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:

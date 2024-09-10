@@ -21,7 +21,7 @@ class AdvertisementController extends Controller
         $validated = $request->validated();
         $advertisementId = $this->advertisementRepository->store($validated);
 
-        return response()->json($advertisementId);
+        return response()->json(['id' => $advertisementId]);
     }
 
     public function index(AdvertisementRequest $request): JsonResponse

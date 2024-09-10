@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Interfaces\RepositoryInterface;
 use App\Models\Advertisement;
 use App\Models\AdvertisementPhoto;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 class AdvertisementRepository implements RepositoryInterface
 {
@@ -12,7 +13,7 @@ class AdvertisementRepository implements RepositoryInterface
     public function __construct()
     {}
 
-    public function index(array $data)
+    public function index(array $data): LengthAwarePaginator
     {
         $advertisementBuilder = Advertisement::query();
         if (isset($data['order']) && isset($data['orderBy'])) {
