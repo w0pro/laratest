@@ -15,6 +15,56 @@ a,
   padding: 3px;
 }
 
+.button__1,
+.button__2,
+.page__nav{
+  padding: 10px;
+  border-radius: 8px;
+  width: fit-content;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s;
+}
+
+.page__nav {
+  border: 3px solid white;
+  border-radius: 6px;
+  width: 40px;
+  height: 40px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button__1,
+.page__nav.active{
+  background: #ffb700;
+  color: black;
+}
+
+.button__2 {
+  background: red;
+  color: white;
+}
+
+
+
+input {
+  outline: none;
+  padding: 10px;
+}
+
+.button__1:hover{
+  background: #ecff00;
+}
+
+.button__2:hover{
+  background: #b93f3f;
+}
+
+
+
 @media (hover: hover) {
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);

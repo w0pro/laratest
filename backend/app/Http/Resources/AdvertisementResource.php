@@ -16,6 +16,7 @@ class AdvertisementResource extends JsonResource
     {
         $fields = $request->input('fields');
         $arrayResponse = [
+            'id'=> $this->id,
             'title' => $this->title,
             'price'=>$this->price,
             'headPhoto' => new AdvertisementPhotoResource($this->headPhoto),
